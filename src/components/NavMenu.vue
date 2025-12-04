@@ -12,8 +12,8 @@
       Meals by Letter
     </router-link>
 
-    <router-link :to="{ name: 'meals-by-ingredients' }">
-      Meals by Ingredients
+    <router-link :to="{ name: 'ingredients' }">
+      Ingredients
     </router-link>
   </nav>
 </template>
