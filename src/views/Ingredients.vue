@@ -1,11 +1,10 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import use_api from '@/composables/use_api'
+import useApi from '@/composables/use_api'
 
-const api = use_api()
+const { api } = useApi()
 
 const keyword = ref('')
-
 const ingredients = ref([])
 
 onMounted(() => {
@@ -19,8 +18,8 @@ const searchedIngredients = computed(() => {
     return ingredients.value
   }
 
-  return ingredients.value.filter((i) =>
-    i.strIngredient.toLowerCase().includes(keyword.value.toLowerCase())
+  return ingredients.value.filter((ingredient) =>
+    ingredient.strIngredient.toLowerCase().includes(keyword.value.toLowerCase())
   )
 })
 </script>
